@@ -30,7 +30,7 @@ const HomePage: React.FC<Props> = ({ results }) => {
 };
 
 export const getStaticProps = async () => {
-  const response = await fetch('http://localhost:3000/api/product-requests');
+  const response = await fetch(`${process.env.DOMAIN}/api/product-requests`);
   const { results } = await response.json();
 
   return {
