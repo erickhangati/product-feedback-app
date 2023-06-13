@@ -62,6 +62,12 @@ export const getStaticProps = async (context: MyContext) => {
     (item: ProductRequest) => item._id.toString() === requestId
   );
 
+  if (!request) {
+    return {
+      notFound: true,
+    };
+  }
+
   return {
     props: {
       request,
