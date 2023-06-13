@@ -61,7 +61,9 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
     client.close();
     res.status(200).json({ status: 'success', results });
   } catch (error) {
+    client.close();
     res.status(204).json({ status: 'failed', error: error.message });
+    return;
   }
 };
 

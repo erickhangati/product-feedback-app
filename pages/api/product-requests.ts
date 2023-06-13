@@ -16,11 +16,10 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
   );
 
   if (!feedbacksCollection) {
+    client.close();
     res
       .status(503)
       .json({ status: 'failed', error: 'Failed to connect to database' });
-
-    client.close();
     return;
   }
 
@@ -151,7 +150,9 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
       res.status(200).json({ status: 'success', results });
       return;
     } catch (error) {
+      client.close();
       res.status(204).json({ status: 'failed', error: error.message });
+      return;
     }
   }
 
@@ -169,11 +170,13 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
         throw new Error('Failed to fetch data');
       }
 
-      res.status(200).json({ status: 'success', results });
       client.close();
+      res.status(200).json({ status: 'success', results });
       return;
     } catch (error) {
+      client.close();
       res.status(204).json({ status: 'failed', error: error.message });
+      return;
     }
   }
 
@@ -192,8 +195,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
           throw new Error('Failed to update feedback');
         }
 
-        res.status(200).json({ status: 'success', results });
         client.close();
+        res.status(200).json({ status: 'success', results });
         return;
       }
 
@@ -206,11 +209,13 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
         throw new Error('Failed to delete feedback');
       }
 
-      res.status(200).json({ status: 'success', results });
       client.close();
+      res.status(200).json({ status: 'success', results });
       return;
     } catch (error) {
+      client.close();
       res.status(204).json({ status: 'failed', error: error.message });
+      return;
     }
   }
 
