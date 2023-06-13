@@ -1,0 +1,57 @@
+@use '../../styles/mixins.scss' as mixins;
+
+.no-feedback {
+  padding: 11rem 15.6rem;
+  background-color: rgba(var(--white));
+  border-radius: 1rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5.3rem;
+
+  @include mixins.respond(laptop-lg) {
+    padding: 8rem 16rem;
+  }
+
+  @include mixins.respond(laptop) {
+    padding: 8rem 12rem;
+  }
+
+  @include mixins.respond(tablet-sm) {
+    width: calc(100% - 4.8rem);
+    margin: 0 auto;
+    padding: 8rem 4rem;
+  }
+
+  &-content {
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.6rem;
+
+    & h2 {
+      line-height: 1;
+      font-size: 2.4rem;
+      letter-spacing: -0.33px;
+    }
+
+    & p {
+      color: rgba(var(--dark-grey));
+    }
+
+    &__button {
+      margin-top: 3.2rem;
+      background-color: rgba(var(--purple));
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        background-color: rgba(var(--purple), 0.8);
+      }
+    }
+  }
+}

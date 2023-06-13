@@ -1,0 +1,47 @@
+@use '../../styles/mixins.scss' as mixins;
+
+.roadmap-tile {
+  padding: 3.2rem;
+  border-radius: 1rem;
+  background-color: rgba(var(--white));
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+
+  &:hover {
+    box-shadow: 0 10px 20px -7px rgba(var(--dark-blue), 0.15);
+  }
+
+  @include mixins.respond(laptop) {
+    padding: 2.4rem;
+  }
+
+  & p {
+    color: rgba(var(--dark-grey));
+    margin-top: -1rem;
+  }
+}
+
+.tile-status {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+
+  & span {
+    color: rgba(var(--dark-grey));
+  }
+}
+
+.tile-interactions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__votes {
+    padding: 1rem 1.4rem;
+    flex-direction: row;
+  }
+}

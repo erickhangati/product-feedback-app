@@ -1,0 +1,80 @@
+.form-input {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  width: 100%;
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 1.6rem;
+  }
+}
+
+.form-labels {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 1.2rem;
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+
+    & label {
+      font-size: 1.4rem;
+      letter-spacing: -0.19px;
+      font-weight: 700;
+      color: rgba(var(--dark-blue));
+      line-height: 1;
+    }
+
+    & p {
+      font-size: 1.4rem;
+      color: rgba(var(--dark-grey));
+      line-height: 1.25;
+    }
+  }
+
+  & span {
+    line-height: 1;
+    font-size: 1.4rem;
+    color: #d73737;
+  }
+}
+
+.input-field {
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  & select {
+    appearance: none;
+    width: 100%;
+    outline: none;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(var(--dark-grey), 0.3);
+    padding: 1.2rem 2rem;
+    color: rgba(var(--dark-blue));
+    font-family: inherit;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    letter-spacing: -0.25px;
+    background-color: var(--light-grey);
+
+    &:focus {
+      border: 1px solid rgba(var(--blue));
+    }
+
+    & option {
+      background-color: var(--light-grey);
+      border-radius: 0.5rem;
+    }
+  }
+}
+
+select.border-error {
+  border: 1px solid #d73737;
+}

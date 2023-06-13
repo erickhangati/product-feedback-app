@@ -1,0 +1,25 @@
+@use '../../styles/mixins.scss' as mixins;
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+
+  @include mixins.respond(tablet) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1rem;
+  }
+
+  @include mixins.respond(tablet-sm) {
+    display: none;
+  }
+}
+
+.topbar {
+  display: none;
+
+  @include mixins.respond(tablet-sm) {
+    display: block;
+  }
+}

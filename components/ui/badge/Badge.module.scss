@@ -1,0 +1,28 @@
+.badge {
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 1;
+  color: rgba(var(--blue));
+  padding: 0.8rem 1.4rem;
+  border-radius: 1rem;
+  background-color: rgba(var(--grey));
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  text-transform: capitalize;
+
+  align-self: flex-start;
+
+  &:hover {
+    background-color: #cfd7ff;
+    color: rgba(var(--blue));
+  }
+
+  &:active {
+    background-color: rgba(var(--blue));
+    color: rgba(var(--white));
+  }
+}
+
+.two-letters {
+  text-transform: uppercase;
+}

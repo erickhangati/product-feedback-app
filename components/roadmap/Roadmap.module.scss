@@ -1,0 +1,73 @@
+.roadmap {
+  padding: 2.4rem;
+  border-radius: 1rem;
+  background-color: rgba(var(--white));
+
+  &-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & h3 {
+      line-height: 1;
+    }
+
+    & span {
+      font-weight: 500;
+      font-size: 1.4rem;
+      color: rgba(var(--blue), 0.35);
+      border-bottom: 1px solid rgba(var(--blue), 0.35);
+      padding-bottom: 2px;
+      line-height: 1;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        color: rgba(var(--blue));
+        border-bottom: 1px solid rgba(var(--blue));
+      }
+
+      &:active {
+        color: rgba(var(--blue), 0.5);
+        border-bottom: 1px solid rgba(var(--blue), 0.5);
+      }
+    }
+  }
+
+  &-status {
+    margin-top: 2.4rem;
+  }
+}
+
+.status-item {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  color: rgba(var(--dark-grey));
+  column-gap: 1.6rem;
+
+  &__status {
+    margin-right: auto;
+  }
+
+  &__number {
+    justify-self: end;
+    font-weight: 700;
+  }
+}
+
+.spacer {
+  margin-top: 0.8rem;
+}
+
+.bullet--purple {
+  & circle {
+    fill: rgba(var(--purple));
+  }
+}
+
+.bullet--blue {
+  & circle {
+    fill: rgba(var(--light-blue));
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "comments": [
+    {
+      "_id": "648051752a8e9996f9ee82c5",
+      "content": "Awesome idea! Trying to find framework-specific projects within the hubs can be tedious",
+      "user": "6480227d498d6f7546f11c31"
+    },
+    {
+      "_id": "648051752a8e9996f9ee82c6",
+      "content": "Please use fun, color-coded labels to easily identify them at a glance",
+      "user": "6480227d498d6f7546f11c32"
+    },
+    {
+      "_id": "648051752a8e9996f9ee82c7",
+      "content": "Also, please allow styles to be applied based on system preferences. I would love to be able to browse Frontend Mentor in the evening after my device’s dark mode turns on without the bright background it currently has.",
+      "user": "6480227d498d6f7546f11c33"
+    },
+    {
+      "_id": "648051752a8e9996f9ee82c8",
+      "content": "Second this! I do a lot of late night coding and reading. Adding a dark theme can be great for preventing eye strain and the headaches that result. It’s also quite a trend with modern apps and  apparently saves battery life.",
+      "user": "6480227d498d6f7546f11c34",
+      "replies": ["64807ad62a8e9996f9ee82d4", "64807ad62a8e9996f9ee82d5"]
+    },
+    {
+      "_id": "648051752a8e9996f9ee82c9",
+      "content": "Much easier to get answers from devs who can relate, since they've either finished the challenge themselves or are in the middle of it.",
+      "user": "6480227d498d6f7546f11c37"
+    },
+    {
+      "_id": "648051752a8e9996f9ee82ca",
+      "content": "Right now, there is no ability to add images while giving feedback which isn't ideal because I have to use another app to show what I mean",
+      "user": "6480227d498d6f7546f11c38"
+    },
+    {
+      "_id": "648051752a8e9996f9ee82cb",
+      "content": "Yes I'd like to see this as well. Sometimes I want to add a short video or gif to explain the site's behavior..",
+      "user": "6480227d498d6f7546f11c39"
+    },
+    {
+      "_id": "648051752a8e9996f9ee82cc",
+      "content": "I also want to be notified when devs I follow submit projects on FEM. Is in-app notification also in the pipeline?",
+      "user": "6480227d498d6f7546f11c3a",
+      "replies": ["64807ad62a8e9996f9ee82d6"]
+    },
+    {
+      "_id": "648051752a8e9996f9ee82cd",
+      "content": "I've been saving the profile URLs of a few people and I check what they’ve been doing from time to time. Being able to follow them solves that",
+      "user": "6480227d498d6f7546f11c3b"
+    },
+    {
+      "_id": "648051752a8e9996f9ee82ce",
+      "content": "This would be awesome! It would be so helpful to see an overview of my code in a way that makes it easy to spot where things could be improved.",
+      "user": "6480227d498d6f7546f11c3a"
+    },
+    {
+      "_id": "648051752a8e9996f9ee82cf",
+      "content": "Yeah, this would be really good. I'd love to see deeper insights into my code!",
+      "user": "6480227d498d6f7546f11c3b"
+    },
+    {
+      "_id": "648051752a8e9996f9ee82d0",
+      "content": "Having a path through the challenges that I could follow would be brilliant! Sometimes I'm not sure which challenge would be the best next step to take. So this would help me navigate through them!",
+      "user": "6480227d498d6f7546f11c37"
+    },
+    {
+      "_id": "648051752a8e9996f9ee82d1",
+      "content": "I haven't built a portfolio site yet, so this would be really helpful. Might it also be possible to choose layout and colour themes?!",
+      "user": "6480227d498d6f7546f11c36"
+    },
+    {
+      "_id": "648051752a8e9996f9ee82d2",
+      "content": "This would be great! At the moment, I'm just starting challenges in order to save them. But this means the My Challenges section is overflowing with projects and is hard to manage. Being able to bookmark challenges would be really helpful.",
+      "user": "6480227d498d6f7546f11c31"
+    },
+    {
+      "_id": "648051752a8e9996f9ee82d3",
+      "content": "I'd love to see this! It always makes me so happy to see little details like these on websites.",
+      "user": "6480227d498d6f7546f11c3a",
+      "replies": ["64807ad62a8e9996f9ee82d7"]
+    }
+  ]
+}

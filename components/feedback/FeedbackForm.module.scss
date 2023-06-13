@@ -1,0 +1,107 @@
+@use '../../styles/mixins.scss' as mixins;
+
+.back-button {
+  padding: 0;
+  background-color: transparent;
+  color: rgba(var(--dark-grey));
+}
+
+.feedback {
+  margin: 0 22rem;
+
+  @include mixins.respond(laptop) {
+    margin: 0 12rem;
+  }
+
+  @include mixins.respond(tablet) {
+    margin: 0;
+  }
+
+  @include mixins.respond(tablet-sm) {
+    margin: 3.4rem 2.4rem;
+  }
+
+  &-form {
+    margin-top: 6.8rem;
+    padding: 5.2rem 4.2rem;
+    background-color: #fff;
+    border-radius: 1rem;
+    position: relative;
+
+    @include mixins.respond(tablet-sm) {
+      padding: 5.2rem 2.4rem;
+    }
+
+    & h2 {
+      font-size: 2.4rem;
+    }
+  }
+}
+
+.icon {
+  position: absolute;
+  top: 0;
+  transform: translateY(-50%);
+}
+
+.form {
+  margin-top: 4rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+
+  &__buttons {
+    margin-top: 0.8rem;
+    display: flex;
+    gap: 1.6rem;
+    align-items: center;
+    flex-wrap: wrap;
+
+    @include mixins.respond(tablet-sm) {
+      flex-direction: column-reverse;
+      align-items: stretch;
+    }
+
+    &--delete {
+      background-color: #d73737;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        background-color: rgba(215, 55, 55, 0.7);
+      }
+    }
+
+    &--cancel {
+      margin-left: auto;
+      background-color: rgba(var(--dark-blue));
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        background-color: rgba(var(--dark-blue), 0.7);
+      }
+
+      @include mixins.respond(tablet-sm) {
+        margin-left: unset;
+      }
+    }
+
+    &--submit {
+      background-color: rgba(var(--purple));
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        background-color: rgba(var(--purple), 0.7);
+      }
+    }
+  }
+}
+
+.submitting {
+  cursor: default;
+  background-color: #bdbdbd;
+
+  &:hover {
+    background-color: #bdbdbd;
+  }
+}

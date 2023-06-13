@@ -1,0 +1,67 @@
+@use '../../styles/mixins.scss' as mixins;
+
+.comment {
+  margin: 2.4rem 19rem;
+  padding: 3.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  background-color: #ffffff;
+  border-radius: 1rem;
+
+  @include mixins.respond(laptop-lg) {
+    margin: 2.4rem 14rem;
+  }
+
+  @include mixins.respond(laptop) {
+    margin: 2.4rem 6rem;
+  }
+
+  @include mixins.respond(tablet) {
+    margin: 2.4rem 0;
+  }
+
+  @include mixins.respond(tablet-sm) {
+    margin: 2.4rem;
+  }
+
+  & h2 {
+    line-height: 1;
+    font-size: 1.8rem;
+  }
+
+  &-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+
+    &__actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      & span {
+        font-size: 1.5rem;
+        color: rgba(var(--dark-grey));
+      }
+    }
+
+    &__button {
+      background-color: rgba(var(--purple));
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        background-color: rgba(var(--purple), 0.7);
+      }
+    }
+  }
+}
+
+.submitting {
+  cursor: default;
+  background-color: #bdbdbd;
+
+  &:hover {
+    background-color: #bdbdbd;
+  }
+}

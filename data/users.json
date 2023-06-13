@@ -1,0 +1,88 @@
+{
+  "users": [
+    {
+      "_id": "6480227d498d6f7546f11c30",
+      "image": "/images/user-images/image-zena.jpg",
+      "name": "Zena Kelley",
+      "username": "velvetround",
+      "email": "velvetround@gmail.com"
+    },
+    {
+      "_id": "6480227d498d6f7546f11c31",
+      "image": "/images/user-images/image-suzanne.jpg",
+      "name": "Suzanne Chang",
+      "username": "upbeat1811",
+      "email": "upbeat1811@gmail.com"
+    },
+    {
+      "_id": "6480227d498d6f7546f11c32",
+      "image": "/images/user-images/image-thomas.jpg",
+      "name": "Thomas Hood",
+      "username": "brawnybrave",
+      "email": "brawnybrave@gmail.com"
+    },
+    {
+      "_id": "6480227d498d6f7546f11c33",
+      "image": "/images/user-images/image-elijah.jpg",
+      "name": "Elijah Moss",
+      "username": "hexagon.bestagon",
+      "email": "hexagon.bestagon@gmail.com"
+    },
+    {
+      "_id": "6480227d498d6f7546f11c34",
+      "image": "/images/user-images/image-james.jpg",
+      "name": "James Skinner",
+      "username": "hummingbird1",
+      "email": "hummingbird1@gmail.com"
+    },
+    {
+      "_id": "6480227d498d6f7546f11c35",
+      "image": "/images/user-images/image-anne.jpg",
+      "name": "Anne Valentine",
+      "username": "annev1990",
+      "email": "annev1990@gmail.com"
+    },
+    {
+      "_id": "6480227d498d6f7546f11c36",
+      "image": "/images/user-images/image-ryan.jpg",
+      "name": "Ryan Welles",
+      "username": "voyager.344",
+      "email": "voyager.344@gmail.com"
+    },
+    {
+      "_id": "6480227d498d6f7546f11c37",
+      "image": "/images/user-images/image-george.jpg",
+      "name": "George Partridge",
+      "username": "soccerviewer8",
+      "email": "soccerviewer8@gmail.com"
+    },
+    {
+      "_id": "6480227d498d6f7546f11c38",
+      "image": "/images/user-images/image-javier.jpg",
+      "name": "Javier Pollard",
+      "username": "warlikeduke",
+      "email": "warlikeduke@gmail.com"
+    },
+    {
+      "_id": "6480227d498d6f7546f11c39",
+      "image": "/images/user-images/image-roxanne.jpg",
+      "name": "Roxanne Travis",
+      "username": "peppersprime32",
+      "email": "peppersprime32@gmail.com"
+    },
+    {
+      "_id": "6480227d498d6f7546f11c3a",
+      "image": "/images/user-images/image-victoria.jpg",
+      "name": "Victoria Mejia",
+      "username": "arlen_the_marlin",
+      "email": "arlen_the_marlin@gmail.com"
+    },
+    {
+      "_id": "6480227d498d6f7546f11c3b",
+      "image": "/images/user-images/image-jackson.jpg",
+      "name": "Jackson Barker",
+      "username": "countryspirit",
+      "email": "countryspirit@gmail.com"
+    }
+  ]
+}

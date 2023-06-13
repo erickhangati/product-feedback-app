@@ -1,0 +1,51 @@
+@use '../../styles/mixins.scss' as mixins;
+
+.nav {
+  padding: 1.4rem 1.6rem 1.4rem 2.4rem;
+  background-color: rgba(var(--navy-blue));
+  border-radius: 1rem;
+  color: rgba(var(--white));
+
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+
+  @include mixins.respond(tablet-sm) {
+    border-radius: 0;
+    margin-top: 7rem;
+  }
+
+  &__suggestions {
+    font-weight: 700;
+    font-size: 1.8rem;
+    letter-spacing: -0.25px;
+    margin-right: 2.2rem;
+
+    @include mixins.respond(laptop) {
+      margin-right: unset;
+    }
+
+    @include mixins.respond(tablet-sm) {
+      display: none;
+    }
+
+    &-icon {
+      @include mixins.respond(tablet-sm) {
+        display: none;
+      }
+    }
+  }
+
+  &__sort {
+    margin-right: auto;
+  }
+}
+
+.button {
+  background-color: rgba(var(--purple));
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: #c75af6;
+  }
+}

@@ -1,0 +1,33 @@
+@use '../../styles/mixins.scss' as mixins;
+
+.suggestions {
+  display: grid;
+  grid-template-columns: 25.5rem 1fr;
+  column-gap: 3rem;
+
+  @include mixins.respond(laptop) {
+    grid-template-columns: 22rem 1fr;
+    column-gap: 2.4rem;
+  }
+
+  @include mixins.respond(tablet) {
+    grid-template-columns: 1fr;
+    row-gap: 4rem;
+  }
+
+  @include mixins.respond(tablet-sm) {
+    row-gap: 0;
+  }
+
+  &-main {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+  }
+}

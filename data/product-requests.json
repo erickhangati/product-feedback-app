@@ -1,0 +1,122 @@
+{
+  "productRequests": [
+    {
+      "_id": "648040a12a8e9996f9ee82aa",
+      "user": "6480227d498d6f7546f11c30",
+      "title": "Add tags for solutions",
+      "category": "enhancement",
+      "upvotes": 112,
+      "status": "suggestion",
+      "description": "Easier to search for solutions based on a specific stack.",
+      "comments": ["648051752a8e9996f9ee82c5", "648051752a8e9996f9ee82c6"]
+    },
+    {
+      "_id": "648040a12a8e9996f9ee82ab",
+      "user": "6480227d498d6f7546f11c31",
+      "title": "Add a dark theme option",
+      "category": "feature",
+      "upvotes": 99,
+      "status": "suggestion",
+      "description": "It would help people with light sensitivities and who prefer dark mode.",
+      "comments": ["648051752a8e9996f9ee82c7", "648051752a8e9996f9ee82c8"]
+    },
+    {
+      "_id": "648040a12a8e9996f9ee82ac",
+      "user": "6480227d498d6f7546f11c32",
+      "title": "Q&A within the challenge hubs",
+      "category": "feature",
+      "upvotes": 65,
+      "status": "suggestion",
+      "description": "Challenge-specific Q&A would make for easy reference.",
+      "comments": ["648051752a8e9996f9ee82c9"]
+    },
+    {
+      "_id": "648040a12a8e9996f9ee82ad",
+      "user": "6480227d498d6f7546f11c36",
+      "title": "Add image/video upload to feedback",
+      "category": "enhancement",
+      "upvotes": 51,
+      "status": "suggestion",
+      "description": "Images and screencasts can enhance comments on solutions.",
+      "comments": ["648051752a8e9996f9ee82ca", "648051752a8e9996f9ee82cb"]
+    },
+    {
+      "_id": "648040a12a8e9996f9ee82ae",
+      "user": "6480227d498d6f7546f11c34",
+      "title": "Ability to follow others",
+      "category": "feature",
+      "upvotes": 42,
+      "status": "suggestion",
+      "description": "Stay updated on comments and solutions other people post.",
+      "comments": ["648051752a8e9996f9ee82cc", "648051752a8e9996f9ee82cd"]
+    },
+    {
+      "_id": "648040a12a8e9996f9ee82af",
+      "user": "6480227d498d6f7546f11c37",
+      "title": "Preview images not loading",
+      "category": "bug",
+      "upvotes": 3,
+      "status": "suggestion",
+      "description": "Challenge preview images are missing when you apply a filter."
+    },
+    {
+      "_id": "648040a12a8e9996f9ee82b0",
+      "user": "6480227d498d6f7546f11c36",
+      "title": "More comprehensive reports",
+      "category": "feature",
+      "upvotes": 123,
+      "status": "planned",
+      "description": "It would be great to see a more detailed breakdown of solutions.",
+      "comments": ["648051752a8e9996f9ee82ce", "648051752a8e9996f9ee82cf"]
+    },
+    {
+      "_id": "648040a12a8e9996f9ee82b1",
+      "user": "6480227d498d6f7546f11c37",
+      "title": "Learning paths",
+      "category": "feature",
+      "upvotes": 28,
+      "status": "planned",
+      "description": "Sequenced projects for different goals to help people improve.",
+      "comments": ["648051752a8e9996f9ee82d0"]
+    },
+    {
+      "_id": "648040a12a8e9996f9ee82b2",
+      "user": "6480227d498d6f7546f11c30",
+      "title": "One-click portfolio generation",
+      "category": "feature",
+      "upvotes": 62,
+      "status": "in-progress",
+      "description": "Add ability to create professional looking portfolio from profile.",
+      "comments": ["648051752a8e9996f9ee82d1"]
+    },
+    {
+      "_id": "648040a12a8e9996f9ee82b3",
+      "user": "6480227d498d6f7546f11c31",
+      "title": "Bookmark challenges",
+      "category": "feature",
+      "upvotes": 31,
+      "status": "in-progress",
+      "description": "Be able to bookmark challenges to take later on.",
+      "comments": ["648051752a8e9996f9ee82d2"]
+    },
+    {
+      "_id": "648040a12a8e9996f9ee82b4",
+      "user": "6480227d498d6f7546f11c32",
+      "title": "Animated solution screenshots",
+      "category": "bug",
+      "upvotes": 9,
+      "status": "in-progress",
+      "description": "Screenshots of solutions with animations don’t display correctly."
+    },
+    {
+      "_id": "648040a12a8e9996f9ee82b5",
+      "user": "6480227d498d6f7546f11c32",
+      "title": "Add micro-interactions",
+      "category": "enhancement",
+      "upvotes": 71,
+      "status": "live",
+      "description": "Small animations at specific points can add delight.",
+      "comments": ["648051752a8e9996f9ee82d3"]
+    }
+  ]
+}

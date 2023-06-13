@@ -1,0 +1,61 @@
+.sort-container {
+  position: relative;
+}
+
+.sort {
+  width: max-content;
+  background-color: rgba(var(--navy-blue));
+  border-radius: 1rem;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+
+  & svg {
+    & path {
+      stroke: rgba(var(--white));
+    }
+  }
+
+  &-text {
+    font-size: 1.4rem;
+    color: rgba(var(--grey));
+
+    & span {
+      font-weight: 700;
+    }
+  }
+}
+
+.select {
+  position: absolute;
+  top: 4.8rem;
+  left: 0;
+  margin-top: 1.6rem;
+  border-radius: 1rem;
+  background-color: rgba(var(--white));
+  box-shadow: var(--shadow);
+  z-index: 10;
+
+  & li {
+    width: 25.5rem;
+    padding: 1.2rem 2.4rem;
+    color: rgba(var(--dark-grey));
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &:hover,
+    & span.active {
+      color: rgba(var(--purple));
+    }
+  }
+
+  & li:not(:last-child) {
+    border-bottom: 1px solid #ebebeb;
+  }
+}

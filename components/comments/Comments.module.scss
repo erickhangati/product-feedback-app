@@ -1,0 +1,18 @@
+@use '../../styles/mixins.scss' as mixins;
+
+.comments {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+
+  & span {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: rgba(var(--dark-blue));
+  }
+
+  @include mixins.respond(tablet-sm) {
+    align-self: start;
+    justify-self: end;
+  }
+}

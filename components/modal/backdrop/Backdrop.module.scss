@@ -1,0 +1,17 @@
+@use '../../../styles/mixins.scss' as mixins;
+
+.backdrop {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: calc(100vh - 7rem);
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(2px);
+  z-index: 15;
+  display: none;
+
+  @include mixins.respond(tablet-sm) {
+    display: unset;
+  }
+}

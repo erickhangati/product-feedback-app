@@ -1,0 +1,19 @@
+@use '../../../styles/mixins.scss' as mixins;
+
+.overlay {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 72%;
+  height: calc(100vh - 7rem);
+  background-color: rgba(var(--grey));
+  padding: 2.4rem;
+  z-index: 20;
+  display: none;
+
+  @include mixins.respond(tablet-sm) {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+  }
+}

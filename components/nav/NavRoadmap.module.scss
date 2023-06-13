@@ -1,0 +1,58 @@
+@use '../../styles/mixins.scss' as mixins;
+
+.nav {
+  padding: 2.6rem 4rem 2.6rem 3.2rem;
+  background-color: rgba(var(--navy-blue));
+  border-radius: 1rem;
+  color: rgba(var(--white));
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @include mixins.respond(tablet) {
+    padding: 2.6rem 3.2rem;
+  }
+
+  @include mixins.respond(tablet-sm) {
+    padding: 2.6rem 2.4rem;
+    border-radius: 0;
+  }
+
+  &-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+
+    @include mixins.respond(tablet-sm) {
+      gap: 1.2rem;
+    }
+
+    &__back {
+      background-color: transparent;
+      padding: 0;
+
+      & svg path {
+        stroke: rgba(var(--white));
+      }
+    }
+
+    & h2 {
+      color: rgba(var(--white));
+      font-size: 2.4rem;
+
+      @include mixins.respond(tablet-sm) {
+        font-size: 1.8rem;
+      }
+    }
+  }
+}
+
+.button {
+  background-color: rgba(var(--purple));
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: #c75af6;
+  }
+}

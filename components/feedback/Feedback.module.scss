@@ -1,0 +1,54 @@
+@use '../../styles/mixins.scss' as mixins;
+
+.feedback {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  padding: 0 19rem;
+
+  @include mixins.respond(laptop-lg) {
+    padding: 0 14rem;
+  }
+
+  @include mixins.respond(laptop) {
+    padding: 0 6rem;
+  }
+
+  @include mixins.respond(tablet) {
+    padding: 0;
+  }
+
+  &-buttons {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    @include mixins.respond(tablet) {
+      width: calc(100% - 4.8rem);
+      margin: 2.4rem auto 0 auto;
+    }
+
+    &__back {
+      background-color: unset;
+      color: rgba(var(--dark-grey));
+      padding: 1.6rem 0;
+    }
+
+    &__edit {
+      background-color: rgba(var(--blue));
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        background-color: rgba(var(--blue), 0.8);
+      }
+    }
+  }
+
+  &__suggestion {
+    cursor: default;
+
+    &:hover {
+      box-shadow: unset;
+    }
+  }
+}

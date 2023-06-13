@@ -1,0 +1,113 @@
+@use '../../styles/mixins.scss' as mixins;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  &-actions {
+    margin-top: 1.2rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}
+
+.login-form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 45rem;
+  padding: 4rem 3.2rem;
+  background-color: rgba(var(--light-grey));
+  border-radius: 0.8rem;
+  z-index: 25;
+
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+
+  @include mixins.respond(phone) {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  &__close {
+    align-self: flex-end;
+    cursor: pointer;
+
+    & path {
+      fill: rgba(var(--dark-grey));
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        fill: #d73737;
+      }
+    }
+  }
+
+  &__google {
+    align-self: center;
+  }
+
+  & h2 {
+    text-align: center;
+    color: rgba(var(--orange));
+  }
+}
+
+.submit-button {
+  background-color: rgba(var(--navy-blue));
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: rgba(var(--navy-blue), 0.8);
+  }
+}
+
+.demo-login {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+
+  & h4 {
+    line-height: 1;
+    font-size: 1.4rem;
+    color: rgba(var(--orange));
+    margin-bottom: 0.8rem;
+  }
+
+  & p {
+    font-size: 1.4rem;
+    color: rgba(var(--dark-grey));
+    line-height: 1.25;
+
+    & span {
+      font-weight: 500;
+    }
+  }
+}
+
+.with-email {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  column-gap: 1.6rem;
+  color: rgba(var(--dark-grey));
+
+  & div {
+    height: 1px;
+    background-color: rgba(var(--dark-grey), 0.2);
+    display: inline-block;
+  }
+}
+
+.submitting {
+  cursor: default;
+  background-color: #bdbdbd;
+
+  &:hover {
+    background-color: #bdbdbd;
+  }
+}

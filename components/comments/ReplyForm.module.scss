@@ -1,0 +1,41 @@
+@use '../../styles/mixins.scss' as mixins;
+
+.reply-form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: 1.6rem;
+  align-items: start;
+
+  @include mixins.respond(phone) {
+    grid-template-columns: 1fr;
+    row-gap: 1.6rem;
+  }
+
+  &__input {
+    gap: 0;
+  }
+
+  &__button {
+    padding: 1.2rem 2.4rem;
+    width: fit-content;
+    background-color: rgba(var(--purple));
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background-color: rgba(var(--purple), 0.7);
+    }
+
+    @include mixins.respond(phone) {
+      justify-self: end;
+    }
+  }
+}
+
+.submitting {
+  cursor: default;
+  background-color: #bdbdbd;
+
+  &:hover {
+    background-color: #bdbdbd;
+  }
+}

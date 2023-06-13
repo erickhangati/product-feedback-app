@@ -1,0 +1,21 @@
+.sign-in-google {
+  padding: 1rem 2.4rem;
+  background-color: rgba(var(--light-grey));
+  border: 1px solid rgba(var(--dark-grey), 0.2);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+
+  &:hover {
+    border: 1px solid rgba(var(--dark-grey), 0.6);
+  }
+
+  & span {
+    color: rgba(var(--dark-blue));
+  }
+}

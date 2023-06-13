@@ -1,0 +1,46 @@
+@use '../../../styles/mixins.scss' as mixins;
+
+.upvotes {
+  border-radius: 1rem;
+  padding: 1.4rem 1.6rem;
+  background-color: rgba(var(--grey));
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-start;
+
+  &:hover {
+    background-color: #cfd7ff;
+  }
+
+  &:active {
+    background-color: rgba(var(--blue));
+  }
+
+  & span {
+    font-weight: 700;
+    font-size: 1.3rem;
+    line-height: 1;
+    letter-spacing: -0.18px;
+    color: rgba(var(--dark-blue));
+  }
+
+  &:active span {
+    color: rgba(var(--white));
+  }
+
+  &:active path {
+    stroke: rgba(var(--white));
+  }
+
+  @include mixins.respond(tablet-sm) {
+    padding: 1rem 1.4rem;
+    flex-direction: row;
+    justify-self: start;
+  }
+}
