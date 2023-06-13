@@ -1,14 +1,14 @@
-# Frontend Mentor - Feedback App Challenge
+# Frontend Mentor - Product Feedback App Challenge
 
-![Design preview for the Feedback App challenge](./preview.jpg)
+![Design preview for the Product Feedback App challenge](./preview.jpg)
 
 ## Welcome! 👋
 
-This is a challenge from Frontend Mentor. We were supposed to build a Feedback App.
+This is a challenge from Frontend Mentor. We were supposed to build a Product Feedback App.
 
 ## How it works
 
-It is a fullstack simple feedback app that can collect feedbacks of a software aaplication.
+It is a fullstack simple product feedback app that can collect feedbacks of a software aaplication.
 
 ## Technologies Used
 
@@ -17,6 +17,6 @@ It is a fullstack simple feedback app that can collect feedbacks of a software a
 3. NextJS, TypeScript including; Framer Motion, Formik Forms, Next Auth
 4. MongoDB
 
-## Live link to the Feedback App
+## Live link to the Product Feedback App
 
-[https://eric-product-feedback-app.vercel.app/](https://eric-product-feedback-app.vercel.app 'Frontend Mentor Challenge - Feedback App')
+[https://eric-product-feedback-app.vercel.app/](https://eric-product-feedback-app.vercel.app 'Frontend Mentor Challenge - Product Feedback App')
