@@ -1,4 +1,5 @@
 import React, { useContext, useEffect } from 'react';
+import Head from 'next/head';
 import { useSession } from 'next-auth/react';
 
 import Feedback from '../components/feedback/Feedback';
@@ -24,6 +25,10 @@ const RequestDetails: React.FC<Props> = ({ request }) => {
 
   return (
     <>
+      <Head>
+        <title>{`Feedback | ${feedback.title}`}</title>
+        <meta name='description' content={`Feedback - ${feedback.title}`} />
+      </Head>
       <Feedback request={feedback} />
       {feedback.comments.length > 0 && <FeedbackComments request={feedback} />}
       <CommentsForm requestId={feedback._id} userEmail={session?.user.email} />

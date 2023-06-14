@@ -21,7 +21,7 @@ const HomePage: React.FC<Props> = ({ results }) => {
   return (
     <>
       <Head>
-        <title>Home | Feedbacks</title>
+        <title>Feedbacks | Suggetions</title>
         <meta name='description' content='Suggestions feedbacks.' />
       </Head>
       <Suggestions />
