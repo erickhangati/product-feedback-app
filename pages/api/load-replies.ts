@@ -12,9 +12,7 @@ interface Data {
 
 const handler = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
   if (req.method === 'GET') {
-    const { client, collection: repliesCollection } = await getConnection(
-      'replies'
-    );
+    const { client, repliesCollection } = await getConnection();
     const results = await repliesCollection.find({}).toArray();
     const data = {
       replies: results,
@@ -39,9 +37,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
       user: new ObjectId(reply.user),
     }));
 
-    const { client, collection: repliesCollection } = await getConnection(
-      'replies'
-    );
+    const { client, repliesCollection } = await getConnection();
 
     // const results = await repliesCollection.deleteMany();
     const results = await repliesCollection.insertMany(data);

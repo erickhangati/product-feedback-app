@@ -11,9 +11,7 @@ interface Data {
 
 const handler = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
   if (req.method === 'GET') {
-    const { client, collection: usersCollection } = await getConnection(
-      'users'
-    );
+    const { client, usersCollection } = await getConnection();
     const results = await usersCollection.find({}).toArray();
     const data = {
       users: results,
@@ -33,9 +31,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
     const jsonData = fs.readFileSync(filePath);
     const { users } = JSON.parse(jsonData.toString());
 
-    const { client, collection: usersCollection } = await getConnection(
-      'users'
-    );
+    const { client, usersCollection } = await getConnection();
 
     const results = await usersCollection.insertMany(users);
     client.close();

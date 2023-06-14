@@ -10,13 +10,10 @@ interface Data {
 
 const handler = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
   const { comment, requestId, userEmail } = req.body;
-  const { collection: commentsCollection } = await getConnection('comments');
-  const { collection: usersCollection } = await getConnection('users');
-  const { client, collection: requestCollection } = await getConnection(
-    'product-requests'
-  );
+  const { client, feedbacksCollection, commentsCollection, usersCollection } =
+    await getConnection();
 
-  if (!commentsCollection || !usersCollection || !requestCollection) {
+  if (!commentsCollection || !usersCollection || !feedbacksCollection) {
     res
       .status(503)
       .json({ status: 'failed', error: 'Failed to connect to database' });
@@ -47,7 +44,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
     }
 
     // UPDATE REQUEST WITH NEW COMMENT
-    const results = await requestCollection.updateOne(
+    const results = await feedbacksCollection.updateOne(
       {
         _id: new ObjectId(requestId),
       },

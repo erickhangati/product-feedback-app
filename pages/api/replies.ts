@@ -15,9 +15,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
 
   const { content, replyingTo, userEmail, commentId } = req.body;
 
-  const { client, collection: usersCollection } = await getConnection('users');
-  const { collection: repliesCollection } = await getConnection('replies');
-  const { collection: commentsCollection } = await getConnection('comments');
+  const { client, usersCollection, repliesCollection, commentsCollection } =
+    await getConnection();
 
   if (!commentsCollection || !usersCollection || !repliesCollection) {
     res

@@ -12,9 +12,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
   if (req.method !== 'PATCH') return;
 
   const { _id, upvotes } = req.body;
-  const { client, collection: feedbacksCollection } = await getConnection(
-    'product-requests'
-  );
+  const { client, feedbacksCollection } = await getConnection();
 
   if (!feedbacksCollection) {
     res

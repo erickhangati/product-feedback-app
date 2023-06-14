@@ -12,9 +12,8 @@ interface Data {
 
 const handler = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
   if (req.method === 'GET') {
-    const { client, collection: productRequestsCollection } =
-      await getConnection('product-request');
-    const results = await productRequestsCollection.find({}).toArray();
+    const { client, feedbacksCollection } = await getConnection();
+    const results = await feedbacksCollection.find({}).toArray();
     const data = {
       productRequests: results,
     };
@@ -54,10 +53,9 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
       };
     });
 
-    const { client, collection: productRequestsCollection } =
-      await getConnection('product-requests');
+    const { client, feedbacksCollection } = await getConnection();
 
-    const results = await productRequestsCollection.insertMany(data);
+    const results = await feedbacksCollection.insertMany(data);
     // const results = await productRequestsCollection.deleteMany();
     client.close();
 
