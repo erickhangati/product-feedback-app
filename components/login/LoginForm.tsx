@@ -43,12 +43,13 @@ const LoginForm: React.FC<Props> = ({ loginHandler }) => {
   return (
     <div className={styles['login-form']}>
       <Close className={styles['login-form__close']} onClick={loginHandler} />
-      <SignInGoogle onClick={signInWithGoogleHandler} />
+      {/* <SignInGoogle onClick={signInWithGoogleHandler} />
       <div className={styles['with-email']}>
         <div />
         <span>or with email</span>
         <div />
-      </div>
+      </div> */}
+      <h2>Login</h2>
       <Formik
         initialValues={loginInitialValues}
         validationSchema={loginValidationSchema}

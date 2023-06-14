@@ -1,27 +1,48 @@
-import React, { useState } from 'react';
-import { useSession } from 'next-auth/react';
-import Login from '../components/login/Login';
+import React, { useEffect, useState } from 'react';
+import { ProductRequest } from '../data/data-types/types';
+import { GetStaticProps } from 'next';
 
-const users = () => {
-  const [isLogging, setIsLogging] = useState(true);
-  const { data: session, status } = useSession();
-  console.log(session);
-  console.log(status);
-  const handleReply = () => {
-    setIsLogging(() => true);
-  };
+interface Props {
+  results: ProductRequest[];
+}
+
+const test: React.FC<Props> = ({ results }) => {
+  const [feedbacks, setFeedbacks] = useState<ProductRequest[] | null>(null);
+
+  useEffect(() => {
+    if (results) {
+      setFeedbacks(() => results);
+    }
+  }, [results]);
+
+  if (!feedbacks) return <h2>Loading...</h2>;
+
+  console.log(feedbacks);
+
   return (
-    <>
-      {!isLogging && <span onClick={handleReply}>Reply</span>}
-      {session && status !== 'loading' && isLogging && (
-        <form>
-          <textarea name='reply' id='reply' rows={5}></textarea>
-          <button>Reply</button>
-        </form>
-      )}
-      {!session && status !== 'loading' && isLogging && <Login />}
-    </>
+    <ul>
+      {feedbacks.map((feedback) => (
+        <li key={feedback._id}>{feedback.title}</li>
+      ))}
+    </ul>
   );
 };
 
-export default users;
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const response = await fetch(`${process.env.DOMAIN}/api/product-requests`);
+  const { results } = await response.json();
+
+  if (!results) {
+    return {
+      notFound: true,
+    };
+  }
+
+  return {
+    props: {
+      results,
+    },
+  };
+};
+
+export default test;

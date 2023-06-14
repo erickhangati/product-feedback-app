@@ -37,10 +37,15 @@ const handler = async (req: NextApiRequest, res: NextApiResponse<Data>) => {
       throw new Error('Failed to update comments with new reply');
     }
 
-    client.close();
     res.status(200).json({ status: 'success', results });
+
+    client.close();
+    return;
   } catch (error) {
     res.status(204).json({ status: 'failed', error: error.message });
+
+    client.close();
+    return;
   }
 };
 
