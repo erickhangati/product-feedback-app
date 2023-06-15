@@ -56,13 +56,13 @@
   & span {
     line-height: 1;
     font-size: 1.4rem;
-    color: #d73737;
+    color: rgba(var(--error));
   }
 }
 
 input.border-error,
 textarea.border-error {
-  border: 1px solid #d73737;
+  border: 1px solidrgba(var(--error));
 }
 
 .input-field {

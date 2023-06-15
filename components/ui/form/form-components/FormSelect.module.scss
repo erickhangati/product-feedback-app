@@ -41,7 +41,7 @@
   & span {
     line-height: 1;
     font-size: 1.4rem;
-    color: #d73737;
+    color: rgba(var(--error));
   }
 }
 
@@ -76,5 +76,5 @@
 }
 
 select.border-error {
-  border: 1px solid #d73737;
+  border: 1px solid rgba(var(--error));
 }

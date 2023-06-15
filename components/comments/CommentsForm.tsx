@@ -3,6 +3,7 @@ import { Formik, Form } from 'formik';
 import { FormikHelpers } from 'formik';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
+import { toast } from 'react-toastify';
 
 import FormControl from '../ui/form/form-components/FormControl';
 import Button from '../ui/button/Button';
@@ -65,16 +66,25 @@ const CommentsForm: React.FC<Props> = ({ requestId, userEmail }) => {
 
     setSubmitting(true);
 
-    const response = await fetch('/api/comments', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(comment),
-    });
+    let data;
 
-    const data = await response.json();
-    console.log(data);
+    try {
+      const response = await fetch('/api/comments', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(comment),
+      });
+
+      data = await response.json();
+      console.log(data);
+    } catch (error) {
+      console.error('Failed to post comment');
+      return;
+    }
+
+    toast('Comment added successfully.');
 
     // UPDATING FEEDBACK STATE
     const newComment = {

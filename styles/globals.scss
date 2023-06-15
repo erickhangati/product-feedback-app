@@ -13,9 +13,13 @@
   --grey: 242, 244, 255; /* #F2F4FF */
   --light-grey: 247, 248, 253; /* #F7F8FD */
   --orange: 244, 159, 133; /* #F49F85 */
+  --error: 215, 55, 55; /* #d73737 */
 
   // SHADOWS
   --shadow: 0 1rem 4rem -0.7rem rgba(var(--navy-blue), 0.35);
+
+  // TOASTIFY
+  --toastify-color-progress-light: rgba(var(--blue));
 }
 
 * {

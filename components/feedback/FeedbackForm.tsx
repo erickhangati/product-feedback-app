@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from 'react';
 import { useRouter } from 'next/router';
 import { Formik, Form, FormikHelpers } from 'formik';
 import { useSession } from 'next-auth/react';
+import { toast } from 'react-toastify';
 
 import FormControl from '../ui/form/form-components/FormControl';
 import BackButton from '../ui/button/BackButton';
@@ -32,8 +33,14 @@ interface transformedFeedbackValues {
 const FeedbackForm = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
-  const { feedback, setFeedback, suggestions, setSuggestions } =
-    useContext(AppContext);
+  const {
+    feedback,
+    setFeedback,
+    suggestions,
+    setSuggestions,
+    appData,
+    setAppData,
+  } = useContext(AppContext);
   const { data: session, status } = useSession();
   const [showLogin, setShowLogin] = useState(false);
   const router = useRouter();
@@ -50,16 +57,37 @@ const FeedbackForm = () => {
   const deleteHandler = async () => {
     setIsDeleting(() => true);
 
-    const response = await fetch('/api/product-requests', {
-      method: 'PATCH',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ _id: feedback._id, isDeleting: true }),
-    });
+    try {
+      const response = await fetch('/api/product-requests', {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ _id: feedback._id, isDeleting: true }),
+      });
 
-    const data = await response.json();
-    console.log(data);
+      const data = await response.json();
+      console.log(data);
+    } catch (error) {
+      console.error('Deleting feedback failed.');
+      return;
+    }
+
+    toast('Feedback deleted successfully.');
+
+    // UPDATING SUGGESTIONS STATE
+    const newSuggestions = suggestions.filter(
+      (item) => item._id !== feedback._id
+    );
+
+    setSuggestions(() => newSuggestions);
+
+    // UPDATING APP DATA STATE
+    const newProductRequests = appData.productRequests.filter(
+      (item) => item._id !== feedback._id
+    );
+
+    setAppData((prev) => ({ ...prev, productRequests: newProductRequests }));
 
     setFeedback(() => null);
     setIsDeleting(() => false);
@@ -111,8 +139,17 @@ const FeedbackForm = () => {
       setSubmitting(true);
 
       // POSTING FEEDBACK
-      const data = await postFeedback(transformedFeedback, 'POST');
-      console.log(data);
+      let data;
+
+      try {
+        data = await postFeedback(transformedFeedback, 'POST');
+        console.log(data);
+      } catch (error) {
+        console.error('Failed to post feedback');
+        return;
+      }
+
+      toast('Feedback created successfully.');
 
       // UPDATE STATE
       const newSuggestions = [
@@ -149,9 +186,18 @@ const FeedbackForm = () => {
 
     setSubmitting(true);
 
-    // POSTING FEEDBACK
-    const data = await postFeedback(transformedFeedback, 'PATCH');
-    console.log(data);
+    let data;
+
+    try {
+      // POSTING FEEDBACK
+      data = await postFeedback(transformedFeedback, 'PATCH');
+      console.log(data);
+    } catch (error) {
+      console.error('Failed to post feedback');
+      return;
+    }
+
+    toast('Feedback updated successfully.');
 
     // UPDATE FEEDBACK STATUS
     const editedFeedback = {

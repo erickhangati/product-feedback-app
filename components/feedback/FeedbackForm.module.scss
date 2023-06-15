@@ -64,11 +64,12 @@
     }
 
     &--delete {
-      background-color: #d73737;
+      background-color: rgba(var(--error));
+      color: rgba(var(--light-grey));
       transition: all 0.3s ease-in-out;
 
       &:hover {
-        background-color: rgba(215, 55, 55, 0.7);
+        background-color: rgba(var(--error), 0.7);
       }
     }
 

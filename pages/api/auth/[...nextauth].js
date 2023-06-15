@@ -8,8 +8,10 @@ export const authOptions = {
   providers: [
     CredentialsProvider({
       async authorize(credentials) {
-        const { client, collection } = await getConnection('users');
-        const user = await collection.findOne({ email: credentials.email });
+        const { client, usersCollection } = await getConnection();
+        const user = await usersCollection.findOne({
+          email: credentials.email,
+        });
 
         if (!user) {
           client.close();

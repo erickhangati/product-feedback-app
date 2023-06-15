@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Formik, Form } from 'formik';
 import { FormikHelpers } from 'formik';
 import { signIn } from 'next-auth/react';
@@ -21,6 +21,7 @@ interface Props {
 }
 
 const LoginForm: React.FC<Props> = ({ loginHandler }) => {
+  const [loginError, setLoginError] = useState(false);
   const signInWithGoogleHandler = () => {
     signIn('google'); // Initiates Google authentication
   };
@@ -30,12 +31,19 @@ const LoginForm: React.FC<Props> = ({ loginHandler }) => {
     { setSubmitting, resetForm }: FormikHelpers<LoginValues>
   ) => {
     setSubmitting(true);
-    const result = await signIn('credentials', {
+    setLoginError(() => false);
+
+    const response = await signIn('credentials', {
       redirect: false,
       email: values.email,
       password: values.password,
     });
-    console.log(result);
+
+    if (!response.ok) {
+      setLoginError(() => true);
+      return;
+    }
+
     setSubmitting(false);
     resetForm();
   };
@@ -50,6 +58,13 @@ const LoginForm: React.FC<Props> = ({ loginHandler }) => {
         <div />
       </div> */}
       <h2>Login</h2>
+      {loginError && (
+        <div className={styles['login-failed']}>
+          <div />
+          <span>Login Failed! Wrong email/password.</span>
+          <div />
+        </div>
+      )}
       <Formik
         initialValues={loginInitialValues}
         validationSchema={loginValidationSchema}

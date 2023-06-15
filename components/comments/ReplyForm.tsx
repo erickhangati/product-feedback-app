@@ -3,6 +3,7 @@ import { Formik, Form } from 'formik';
 import { FormikHelpers } from 'formik';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
+import { toast } from 'react-toastify';
 
 import FormControl from '../ui/form/form-components/FormControl';
 import Button from '../ui/button/Button';
@@ -47,16 +48,25 @@ const ReplyForm: React.FC<Props> = ({
 
     setSubmitting(true);
 
-    const response = await fetch('/api/replies', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(reply),
-    });
+    let data;
 
-    const data = await response.json();
-    console.log(data);
+    try {
+      const response = await fetch('/api/replies', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(reply),
+      });
+
+      data = await response.json();
+      console.log(data);
+    } catch (error) {
+      console.error('Failed to add reply.');
+      return;
+    }
+
+    toast('Reply added successfully');
 
     // UPDATE FEEDBACK STATE
 

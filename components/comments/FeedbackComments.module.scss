@@ -104,10 +104,10 @@
     }
 
     &--cancel {
-      color: #d73737;
+      color: rgba(var(--error));
 
       &:hover {
-        color: rgba(215, 55, 55, 0.7);
+        color: rgba(var(--error), 0.7);
       }
     }
   }
