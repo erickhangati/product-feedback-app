@@ -2,6 +2,7 @@ import React, { Dispatch, SetStateAction, useContext } from 'react';
 import { Formik, Form } from 'formik';
 import { FormikHelpers } from 'formik';
 import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/router';
 
 import FormControl from '../ui/form/form-components/FormControl';
 import Button from '../ui/button/Button';
@@ -31,6 +32,7 @@ const ReplyForm: React.FC<Props> = ({
   const { data: session, status } = useSession();
   const { feedback, setFeedback, suggestions, setSuggestions } =
     useContext(AppContext);
+  const router = useRouter();
 
   const onSubmit = async (
     values: ReplyValues,
@@ -87,10 +89,12 @@ const ReplyForm: React.FC<Props> = ({
 
     // UPDATE SUGGESTIONS STATE
     const suggestionsCopy = [...suggestions];
+    console.log(suggestionsCopy);
 
     setSubmitting(false);
     resetForm();
     setIsReplying(() => null);
+    router.replace(router.asPath);
   };
 
   return (

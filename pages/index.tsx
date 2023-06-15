@@ -12,11 +12,13 @@ const HomePage: React.FC<Props> = ({ results }) => {
   const appCtx = useContext(AppContext);
 
   useEffect(() => {
-    appCtx.setAppData((prev) => ({ ...prev, productRequests: results }));
-    appCtx.setSuggestions(() =>
-      results.filter((request) => request.status === 'suggestion')
-    );
-  }, []);
+    if (results && !appCtx.suggestions && !appCtx.appData) {
+      appCtx.setAppData((prev) => ({ ...prev, productRequests: results }));
+      appCtx.setSuggestions(() =>
+        results.filter((request) => request.status === 'suggestion')
+      );
+    }
+  }, [results, appCtx.suggestions, appCtx.appData]);
 
   return (
     <>
@@ -43,6 +45,7 @@ export const getStaticProps = async () => {
     props: {
       results,
     },
+    revalidate: 5,
   };
 };
 

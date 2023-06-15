@@ -136,7 +136,7 @@ const FeedbackForm = () => {
       // RESETTING FORM
       setSubmitting(false);
       resetForm();
-      router.back();
+      router.push('/');
 
       return;
     }

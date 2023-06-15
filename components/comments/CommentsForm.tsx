@@ -104,6 +104,7 @@ const CommentsForm: React.FC<Props> = ({ requestId, userEmail }) => {
     setSubmitting(false);
     setRemainingCount(() => 225);
     setIsLogging(() => false);
+    router.replace(router.asPath);
   };
 
   return (

@@ -13,12 +13,20 @@ interface Props {
   request: ProductRequest;
 }
 
+interface MyContext {
+  params: {
+    requestId: string;
+  };
+}
+
 const RequestDetails: React.FC<Props> = ({ request }) => {
   const { data: session, status } = useSession();
   const { feedback, setFeedback } = useContext(AppContext);
 
   useEffect(() => {
-    setFeedback(() => request);
+    if (request) {
+      setFeedback(() => request);
+    }
   }, [request]);
 
   if (!feedback) return <h2>Loading...</h2>;
@@ -42,28 +50,43 @@ const getData = async () => {
   return results;
 };
 
-export const getStaticPaths = async () => {
-  const productRequests = await getData();
-  const paths = productRequests.map((item: ProductRequest) => ({
-    params: { requestId: item._id.toString() },
-  }));
+// export const getStaticPaths = async () => {
+//   const productRequests = await getData();
+//   const paths = productRequests.map((item: ProductRequest) => ({
+//     params: { requestId: item._id.toString() },
+//   }));
 
-  return {
-    paths,
-    fallback: true,
-  };
-};
+//   return {
+//     paths,
+//     fallback: true,
+//   };
+// };
 
-interface MyContext {
-  params: {
-    requestId: string;
-  };
-}
+// export const getStaticProps = async (context: MyContext) => {
+//   const { requestId } = context.params;
+//   const productRequests = await getData();
+//   const request = productRequests.find(
+//     (item: ProductRequest) => item._id.toString() === requestId
+//   );
 
-export const getStaticProps = async (context: MyContext) => {
+//   if (!request) {
+//     return {
+//       notFound: true,
+//     };
+//   }
+
+//   return {
+//     props: {
+//       request,
+//     },
+//     revalidate: 2,
+//   };
+// };
+
+export const getServerSideProps = async (context: MyContext) => {
   const { requestId } = context.params;
   const productRequests = await getData();
-  const [request] = productRequests.filter(
+  const request = productRequests.find(
     (item: ProductRequest) => item._id.toString() === requestId
   );
 
