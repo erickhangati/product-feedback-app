@@ -5,10 +5,10 @@ import { AppContext } from '../../context/AppContext';
 import styles from './Roadmap.module.scss';
 
 const Roadmap = () => {
-  const appCtx = useContext(AppContext);
+  const { appData } = useContext(AppContext);
 
   const roadMapNumbers = (status: string) => {
-    const filtered = appCtx.appData?.productRequests.filter(
+    const filtered = appData?.productRequests.filter(
       (request) => request.status === status
     );
     return filtered?.length;

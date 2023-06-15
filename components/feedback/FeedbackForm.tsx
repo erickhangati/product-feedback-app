@@ -69,21 +69,22 @@ const FeedbackForm = () => {
       const data = await response.json();
       console.log(data);
     } catch (error) {
-      console.error('Deleting feedback failed.');
+      console.error(error);
+      setIsDeleting(() => false);
       return;
     }
 
     toast('Feedback deleted successfully.');
 
     // UPDATING SUGGESTIONS STATE
-    const newSuggestions = suggestions.filter(
+    const newSuggestions = suggestions?.filter(
       (item) => item._id !== feedback._id
     );
 
     setSuggestions(() => newSuggestions);
 
     // UPDATING APP DATA STATE
-    const newProductRequests = appData.productRequests.filter(
+    const newProductRequests = appData?.productRequests.filter(
       (item) => item._id !== feedback._id
     );
 
